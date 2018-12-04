@@ -1,6 +1,5 @@
 import { makeElement } from './dom_functions';
 import Note from './note';
-import Sounds from './sounds';
 
 
 class Grid {
@@ -9,21 +8,21 @@ class Grid {
     this.div = (...args) => makeElement('div', ...args);
     this.inacurateGrid = {};
     this.grid = {};
-    this.sounds = new Sounds().sounds;
+
   }
 
-  createNote(x, y, sound) {
-    //crete a new note with the x, y coordinates;
+  createNote(x, y) {
+    const div = this.div({className: `off note-${[x, y]}`});
     const pos = [x, y];
-    const note = new Note(pos, sound);
+    const note = new Note(pos, div);
     this.inacurateGrid[pos] = note;
-    return this.div({className: `off note-${[x, y]}`});
+    return div;
   }
 
-  createRow(sound, y){
+  createRow(y){
     const rows = this.div({className: `row row-${y}`});
     for (let x = 0; x < 16; x++) {
-      const note = this.createNote(x, y, sound);
+      const note = this.createNote(x, y);
       rows.appendChild(note);
     }
     return rows;
@@ -31,10 +30,10 @@ class Grid {
 
   create(){
     const wrapper = this.div({className: 'wrapper'});
-    this.sounds.forEach((sound, y) => {
-      const eachRow = this.createRow(sound, y);
+    for (var y = 0; y < 9; y++) {
+      const eachRow = this.createRow(y);
       wrapper.appendChild(eachRow);
-    });
+    }
     return wrapper;
   }
 

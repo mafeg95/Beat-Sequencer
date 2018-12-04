@@ -1,31 +1,45 @@
 import Tone from 'tone';
+import Sequence from './sequence';
 
 class Player {
-  constructor(){
-    this.player = new Tone.Player({
-      bass: './audio/Bass.wav',
-    }, {"onload": Tone.noOp}).toMaster();
+  constructor(sequence){
+    this.player = new Tone.Players({
+      'C2': 'https://tonejs.github.io/examples/audio/casio/C2.mp3',
+      'A2': 'https://tonejs.github.io/examples/audio/casio/A2.mp3',
+      'D2': 'https://tonejs.github.io/examples/audio/casio/D2.mp3',
+      'E2': 'https://tonejs.github.io/examples/audio/casio/E2.mp3',
+      'F2': 'https://tonejs.github.io/examples/audio/casio/F2.mp3',
+      'G2': 'https://tonejs.github.io/examples/audio/casio/G2.mp3',
+      'B1': 'https://tonejs.github.io/examples/audio/casio/B1.mp3',
+      'G1': 'https://tonejs.github.io/examples/audio/casio/Gs1.mp3',
+      'A1': 'https://tonejs.github.io/examples/audio/casio/A1.mp3'
+    }).toMaster();
+    this.setSequence = sequence.setSequence;
+    this.playPause = this.playPause.bind(this);
 
-    this.buffer = new Tone.Buffer('./audio/Kick.wav', () => {
-      var buff = this.buffer.get();
-    });
-    const noteNames = ['kick', 'hat', 'bass', 'snare'];
-    const notes = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5'];
-    // const synth = new Tone.Synth().toMaster();
+    // const notes = ['G1', 'A1', 'B1', 'C2', 'D2', 'E2', 'F2', 'G2', 'A2'];
+    const notes = ['A2', 'G2', 'F2', 'E2', 'D2', 'C2', 'B1', 'A1', 'G1'];
+
     this.loop = new Tone.Sequence((time, col) => {
-      // for (var i = 0; i < 4; i++) {
-      //   this.player.get(noteNames[i]).start(time, 0, '8n', 0);
-      // }
-      // console.log(col);
-      // this.buffer.load('https://freesound.org/s/128971/');
-      this.player.start();
-      // synth.triggerAttackRelease(notes[col], "8n");
-    }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], '4n');
-  //play a middle 'C' for the duration of an 8th note
+      const result = this.setSequence(col);
+      for (let i = 0; i < result.clicked.length; i++) {
+        if (result.clicked[i]){
+          this.player.get(notes[i]).start(time, 0, '16n', 0);
+        }
+      }
+    }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], '16n');
+
     Tone.Transport.start();
 
   }
 
+  playPause(playButton){
+    if (playButton.className === 'playing'){
+      this.loop.start();
+    } else {
+      this.loop.stop();
+    }
+  }
 
 
 

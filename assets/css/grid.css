@@ -1,8 +1,12 @@
 .off {
   width: 30px;
   height: 30px;
-  background-color: #7381A9;
+  background-color: #C6C7E3;
   margin: 6px;
+}
+
+.off:hover{
+  background-color: #47498B;
 }
 
 .row {
@@ -14,8 +18,78 @@
 .wrapper{
   display: flex;
   width: 672px;
-  background-color: #3F475E;
+  background-color: #8283B8;
   height: 500px;
   flex-direction: column;
   padding: 6px;
+}
+
+.on {
+  width: 30px;
+  height: 30px;
+  background-color: #202270;
+  margin: 6px;
+}
+
+#body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #BADADB;
+}
+
+.grid{
+  display: flex;
+}
+
+.controllers-wrapper{
+  display: flex;
+  width: 200px;
+  background: #9A78B1;
+  align-items: center;
+}
+
+.controllers{
+  width: 100%;
+  text-align: center;
+}
+
+.playLabel{
+  font-size: 23px;
+  color: #48176C;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 30px;
+  font-family: sans-serif;
+}
+
+#playButton{
+  line-height: 26px;
+  width: 75%;
+  font-size: 14px;
+  border: none;
+  margin-top: 5px;
+}
+
+#playButton:focus{
+  outline: 0;
+}
+
+.playing{
+  background-color: #48176C;
+  color: #D4C1E1;
+}
+.paused:hover, .playing:hover{
+  background-color: #683E86;
+}
+
+.paused{
+  background: #D4C1E1;
+  color: #48176C;
+}
+
+h1 {
+  font-family: sans-serif;
+  color: #105D61;
 }
