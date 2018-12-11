@@ -39,8 +39,9 @@ class Controller {
   addListener(playButton){
     playButton.addEventListener('click', () => {
       const button = document.getElementById('playButton');
+      const currentColumn = document.getElementsByClassName('shaded');
       this.togglePlayPause(button);
-      this.playPause(button);
+      this.playPause(button, currentColumn);
     });
   }
 

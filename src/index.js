@@ -4,6 +4,8 @@ import Tone from 'tone';
 import Player from './player';
 import Sequence from './sequence';
 import Controller from './controllers';
+import Loop from './loop';
+import Modal from './modal';
 
 document.addEventListener("DOMContentLoaded", () => {
   const div = (...args) => makeElement('div', ...args);
@@ -11,9 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = new Grid();
   const eleGrid = grid.create();
 
-  // const gridObj = grid.setPosition();
   const sequence = new Sequence();
-  const player = new Player(sequence);
+  const loopBar = new Loop();
+  const player = new Player(sequence, loopBar);
 
   const controller = new Controller(player); //div
   const append = controller.appendControllers();
@@ -22,8 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
   gridDiv.appendChild(eleGrid);
   gridDiv.append(append);
 
-  const body = document.getElementById('body');
-  body.appendChild(gridDiv);
+
+
+  const main = document.getElementById('main');
+  main.appendChild(gridDiv);
 });
 
 

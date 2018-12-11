@@ -19,7 +19,7 @@
   display: flex;
   width: 672px;
   background-color: #8283B8;
-  height: 500px;
+  height: 485px;
   flex-direction: column;
   padding: 6px;
 }
@@ -92,4 +92,11 @@
 h1 {
   font-family: sans-serif;
   color: #105D61;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: 55px;
+}
+
+.shaded{
+  opacity: .5;
 }

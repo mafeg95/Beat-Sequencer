@@ -6,7 +6,7 @@ class Sequence {
   setSequence(col){
     const clicked = [];
     const notes = [];
-    for (let y = 0; y < 9; y++) {
+    for (let y = 0; y < 12; y++) {
       const note = document.getElementsByClassName(`note-${[col,y]}`)[0];
       if (note.classList.value.includes('on')){
         clicked.push(true);

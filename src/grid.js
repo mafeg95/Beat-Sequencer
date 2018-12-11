@@ -30,26 +30,14 @@ class Grid {
 
   create(){
     const wrapper = this.div({className: 'wrapper'});
-    for (var y = 0; y < 9; y++) {
+    for (var y = 0; y < 12; y++) {
+      console.log('works');
       const eachRow = this.createRow(y);
       wrapper.appendChild(eachRow);
     }
     return wrapper;
   }
 
-  setPosition(){
-    const grid = {};
-    for (let x = 0; x < 6; x++) {
-      for (let y = 0; y < 1; y++) {
-        const pos = [x, y];
-        const note = document.getElementsByClassName(`note-${pos}`)[0];
-        const noteOffset = note.getBoundingClientRect();
-        const offset = [`[${noteOffset.right}, ${noteOffset.bottom}]`];
-        grid[offset] = this.inacurateGrid[pos];
-      }
-    }
-    return grid;
-  }
 }
 
 export default Grid;
