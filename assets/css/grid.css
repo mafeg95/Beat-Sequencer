@@ -100,3 +100,118 @@ h1 {
 .shaded{
   opacity: .5;
 }
+
+/* li {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	} */
+
+ul{
+  list-style-type: none;
+}
+
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+  ul.icons li {
+    display: inline-block;
+    padding: 0 1.25em 0 0;
+  }
+
+    ul.icons li:last-child {
+      padding-right: 0;
+    }
+
+    ul.icons li .icon:before {
+      font-size: 1.5em;
+    }
+
+.fab, .fas{
+  color: #125862;
+}
+
+.fab:hover, .fas:hover{
+  color: #35727A;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(107, 160, 162, 0.61);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  min-height: 1px;
+}
+
+.modal-child {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #6BA0A2;
+  width: 580px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-weight: 400;
+  background-color: white;
+  box-shadow: 0 10px 15px 0 rgba(0,0,0,0.06);
+  display: flex;
+  z-index: 30px;
+}
+
+.modal-wrapper{
+  padding: 40px 50px;
+  background: #9A78B1;
+  border-radius: 4px;
+  padding-right: 0;
+}
+
+.modal-h2{
+  font-family: sans-serif;
+  color: #48176C;
+}
+
+.modal-p {
+  font-family: sans-serif;
+  color: #48176C;
+}
+
+.close-x{
+  background: #9A78B1;
+  margin: 25px;
+  cursor: pointer;
+}
+
+.modal-child{
+  background: #9A78B1;
+  border-radius: 4px;
+  border: 1px solid #48176C;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.close-modal{
+  display: none;
+}
+
+.footer{
+  margin-top: 65px;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #105D61;
+}
+
+.mail{
+  padding-right: 0;
+}

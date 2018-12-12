@@ -10,6 +10,9 @@ import Modal from './modal';
 document.addEventListener("DOMContentLoaded", () => {
   const div = (...args) => makeElement('div', ...args);
 
+  const modal = new Modal();
+  modal.closeModal();
+
   const grid = new Grid();
   const eleGrid = grid.create();
 

@@ -5,18 +5,35 @@
     <title></title>
     <script type="text/javascript" src="./dist/main.js"></script>
     <link rel="stylesheet" href="./assets/css/grid.css"></link>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./assets/images/Note.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://tonejs.github.io/build/dev/Tone.min.js"></script>
   </head>
   <body id="body">
     <h1>Beat Sequencer</h1>
     <div id="main">
     </div>
-    <div class="modal-background">
-
+    <div id="modal-background" class="modal-background">
+      <div id="modal-child" class="modal-child">
+        <div id="close-x" class="close-x">
+          &times;
+        </div>
+        <div id="modal-wrapper" class="modal-wrapper">
+          <h2 id="modal-h2" class="modal-h2">BeatSequencer</h2>
+          <p id="modal-p" class="modal-p">Welcome to BeatSequencer, a audio sequencer built with Tone.js and Vanilla JavaScript, where you can create your own sick beats!</p>
+          <p id="modal-p" class="modal-p">Simply click on the grid to activate the notes, and then press play to hear your beats. </p>
+        </div>
+      </div>
     </div>
     <footer class="footer">
+      <ul class="icons">
+        <li class="center"><a  href="https://angel.co/maria-fernanda-garcia-2" class="icon alt" target="_blank"><i class="icon fab fa-angellist"></i></a></li>
+        <li class="center"><a  href="https://github.com/mafeg95" class="icon alt" target="_blank"><i class="fab icon fa-github"></i></a></li>
+        <li class="center"><a  href="https://www.linkedin.com/in/maria-fernanda-garcia-97250394/" class="icon alt" target="_blank"><i class="fab icon fa-linkedin"></i></a></li>
+        <li class="center mail"><a  href="mailto:mfg21390@gmail.com" class="icon alt" target="_blank"><i class="fas icon fa-envelope"></i></li>
+        </ul>
+      </footer>
+      <p class="credentials">Created by Maria Fernanda Garcia</p>
 
-    </footer>
   </body>
 </html>
