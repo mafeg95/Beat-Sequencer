@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loopBar = new Loop();
   const player = new Player(sequence, loopBar);
 
-  const controller = new Controller(player); //div
+  const controller = new Controller(player);
   const append = controller.appendControllers();
 
   const gridDiv = div({className: 'grid'});
