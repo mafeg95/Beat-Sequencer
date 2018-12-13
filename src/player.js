@@ -44,7 +44,6 @@ class Player {
     if (playButton.className === 'playing'){
       this.loop.start();
     } else {
-      debugger
       this.loop.stop();
       this.resetLoop(currentColumn);
     }
