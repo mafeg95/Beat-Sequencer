@@ -13,7 +13,6 @@ class Note {
     if (this.div.classList.value.includes('off')){
       this.div.classList.remove('off');
       this.div.classList.add('on');
-      console.log(this.div.className);
     } else {
       this.div.classList.remove('on');
       this.div.classList.add('off');
