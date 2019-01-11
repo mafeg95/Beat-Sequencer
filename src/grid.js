@@ -30,8 +30,7 @@ class Grid {
 
   create(){
     const wrapper = this.div({className: 'wrapper'});
-    for (var y = 0; y < 12; y++) {
-      console.log('works');
+    for (var y = 0; y < 9; y++) {
       const eachRow = this.createRow(y);
       wrapper.appendChild(eachRow);
     }

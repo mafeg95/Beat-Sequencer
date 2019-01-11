@@ -13,8 +13,7 @@ class Loop {
   }
 
   resetLoop(currentColumn){
-    for (let i = 0; i < 12; i++) {
-      debugger
+    for (let i = 0; i < 9; i++) {
       currentColumn[0].classList.remove('shaded');
     }
   }
