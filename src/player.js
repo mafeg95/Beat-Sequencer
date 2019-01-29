@@ -3,11 +3,6 @@ import Sequence from './sequence';
 
 class Player {
   constructor(sequence, loopBar){
-    // this.player = new Tone.Players({
-    //   'bass': 'http://127.0.0.1:8887/bass.wav',
-    //   'hat': 'http://127.0.0.1:8887/hat2.wav',
-    //   'snare': 'http://127.0.0.1:8887/snare.wav'
-    // }).toMaster();
     this.setSequence = sequence.setSequence;
     this.playPause = this.playPause.bind(this);
     this.loopBarFunc = loopBar.loopBarFunc;
@@ -16,9 +11,7 @@ class Player {
     const notes = ['A2', 'G2', 'F2', 'E2', 'D2', 'C2', 'B1', 'A1', 'G1'];
     this.synth = new Tone.Synth().toMaster();
 
-
-
-    this.loop = new Tone.Sequence((time, col) => {
+    this.seq = new Tone.Sequence((time, col) => {
       const result = this.setSequence(col);
       for (let i = 0; i < result.clicked.length; i++) {
         let prevCol;
@@ -33,16 +26,17 @@ class Player {
         }
       }
     }, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], '16n');
-
+    //
     Tone.Transport.start();
 
   }
 
   playPause(playButton, currentColumn){
     if (playButton.className === 'playing'){
-      this.loop.start();
+
+      this.seq.start();
     } else {
-      this.loop.stop();
+      this.seq.stop();
       this.resetLoop(currentColumn);
     }
   }
